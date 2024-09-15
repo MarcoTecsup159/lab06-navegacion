@@ -100,7 +100,9 @@ fun CustomBottomBar(navController: NavController) {
             }) {
                 Icon(Icons.Filled.Settings, contentDescription = "Build description")
             }
-            IconButton(onClick = { print("Menu") }) {
+            IconButton(onClick = {
+                navController.navigate(route = AppScreens.Info.route)
+            }) {
                 Icon(
                     Icons.Filled.Info,
                     contentDescription = "Menu description",

@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.lab06.screens.CustomScaffold
 import com.example.lab06.screens.Profile
 import com.example.lab06.screens.Settings
+import com.example.lab06.screens.Info
 
 @Composable
 fun AppNavigation(){
@@ -20,6 +21,9 @@ fun AppNavigation(){
         }
         composable(route = AppScreens.Settings.route) {
             Settings(navController)
+        }
+        composable(route = AppScreens.Info.route) {
+            Info(navController)
         }
     }
 }

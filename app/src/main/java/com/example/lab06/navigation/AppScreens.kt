@@ -4,4 +4,5 @@ sealed class AppScreens(val route: String) {
     object PantallaInicio: AppScreens(route = "customScaffold")
     object Profile: AppScreens(route = "profile")
     object Settings: AppScreens(route = "settings")
+    object Info: AppScreens(route = "info")
 }
