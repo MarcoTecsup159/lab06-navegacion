@@ -52,105 +52,24 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.lab06.navigation.AppNavigation
 import com.example.lab06.ui.theme.Lab06Theme
+import com.example.lab06.screens.Profile
+import com.example.lab06.screens.CustomScaffold
+ // Asegúrate de que la ruta de importación sea correcta
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            CustomScaffold()
+            AppNavigation()
         }
     }
-}
-
-@Composable
-fun CustomScaffold() {
-    Scaffold(
-        topBar = { CustomTopBar() },
-        bottomBar = { CustomBottomBar() },
-        floatingActionButton = { CustomFAB() },
-        content = { padding ->
-            CustomContent(padding)
-        }
-    )
-}
-
-@Composable
-fun CustomContent(padding: PaddingValues) {
-    Column(
-        // Modificadores de estilo de la columna
-        modifier = Modifier
-            // Ocupar todo el espacio disponible
-            .fillMaxSize()
-            .padding(padding),
-
-        // Contenido de la aplicación
-        content = {
-            Text(text = "My app content")
-        }
-    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun CustomTopBar() {
-    TopAppBar(
-        navigationIcon = {
-            IconButton(onClick = { /*TODO*/ }) {
-                Icon(imageVector = Icons.Rounded.Menu, contentDescription = null)
-            }
-        },
-        title = { Text(text = "Sample Title") },
-        actions = {
-            IconButton(onClick = { /*TODO*/ }) {
-                Icon(
-                    imageVector = Icons.Rounded.Search,
-                    contentDescription = null
-                )
-            }
-            IconButton(onClick = { /*TODO*/ }) {
-                Icon(
-                    imageVector = Icons.Outlined.AccountCircle,
-                    contentDescription = null
-                )
-            }
-        }
-    )
-}
-
-@Composable
-fun CustomBottomBar() {
-    BottomAppBar {
-        IconButton(onClick = { print("Build") }) {
-            Icon(Icons.Filled.Build, contentDescription = "Build description")
-        }
-        IconButton(onClick = { print("Menu") }) {
-            Icon(
-                Icons.Filled.Menu,
-                contentDescription = "Menu description",
-            )
-        }
-    }
-}
-
-
-@Composable
-fun CustomFAB() {
-    FloatingActionButton(
-        // Color de fondo
-        //backgroundColor = MaterialTheme.colors.primary,
-        // Acción al hacer clic en el botón (sin definir)
-        onClick = { /*TODO*/ }) {
-        Text(
-            fontSize = 24.sp, // Tamaño de fuente del texto del botón
-            text = "+" // Texto del botón
-        )
-    }
-}
-
 @Preview(showBackground = true)
 @Composable
-fun PreviewCustomScaffold() {
-    CustomScaffold() // Para mostrar todo en una sola vista de preview
+fun StartMenuPreview() {
+    AppNavigation()
 }

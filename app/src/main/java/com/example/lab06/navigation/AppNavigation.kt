@@ -1,0 +1,21 @@
+package com.example.lab06.navigation
+
+import androidx.compose.runtime.Composable
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.lab06.screens.CustomScaffold
+import com.example.lab06.screens.Profile
+
+@Composable
+fun AppNavigation(){
+    val navController = rememberNavController()
+    NavHost(navController = navController, startDestination = AppScreens.PantallaInicio.route) {
+        composable(route = AppScreens.PantallaInicio.route) {
+            CustomScaffold(navController)
+        }
+        composable(route = AppScreens.Profile.route) {
+            Profile(navController)
+        }
+    }
+}
